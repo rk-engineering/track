@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Page Title</title>
+  </head>
+  <body>
+    <h1>Hello, world!</h1>
+    <script>
+      var queryString = window.location.search;
+      var params = new URLSearchParams(queryString);
+      var title = params.get('title'); // Assumes the parameter name is 'title'
+      document.title = title;
+    </script>
+  </body>
+</html>
