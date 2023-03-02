@@ -1,19 +1,104 @@
 <!DOCTYPE html>
+<!--  
+      Design and Developed by Robin Gautam    
+-->
 <html>
   <head>
-    <title>RK Legal Advisors</title>
+    <title>Redirecting to Case Tracking Form - RK Legals Advisors</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      body {
+        background-color: rgb(16, 22, 40);
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+        margin: 0;
+        padding: 0;
+        color: #fff;
+      }
+      
+      header {
+        background-color: rgb(16, 22, 40);
+        padding: 20px;
+        text-align: center;
+      }
+      
+      h1 {
+        color: rgb(230, 193, 87);
+        font-size: 2rem;
+        margin-bottom: 0;
+      }
+      
+      h2 {
+        font-size: 1.2rem;
+        margin-top: 0;
+      }
+      
+      .container {
+        background-color: #fff;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        margin: 20px;
+        padding: 20px;
+        border-radius: 10px;
+      }
+      
+      p {
+        margin: 0;
+        padding: 10px 0;
+      }
+      
+      .button {
+        font-size: 1.2rem;
+        padding: 10px 20px;
+        background-color: rgb(230, 193, 87);
+        color: #fff;
+        border-radius: 5px;
+        text-decoration: none;
+        margin-top: 20px;
+        display: inline-block;
+        transition: background-color 0.2s ease-in-out;
+      }
+      
+      .button:hover {
+        background-color: #ff9800;
+      }
+    </style>
   </head>
+  
   <body>
-    <center>
-      <h1>RK Legals Advisors</h1>
-      <h2>Redirecting to Record Keeping Form..</h2>
-    </center>
+    <header>
+      <h1>RK Legal Advisors</h1>
+      <br />
+      <h2 id="case">Case: ...</h2>
+      <h2 id="file">File - ...</h2>
+      <br />
+      <h2>Redirecting to Case Tracking Form..</h2>
+    </header>
+
     <script>
       var queryString = window.location.search;
       var params = new URLSearchParams(queryString);
+
+      // Get the Case and File ID
       var caseId = params.get('caseID'); 
       var fileId = params.get('fileID'); 
-      window.location = 'https://docs.google.com/forms/d/e/1FAIpQLSdYORiYpB8UxM_MSp_73sJ67EhHHGwdtN89OfTaLMFakiwFjQ/viewform?usp=pp_url&entry.1930774622=' + caseId + '&entry.446235083=' + fileId
+
+      // Display Case and File ID on the UI
+      const caseIDElement = document.getElementById('case');
+      const fileIDElement = document.getElementById('file');
+      caseIDElement.innerText = 'Case: ' + caseId;
+      fileIDElement.innerText = 'File - ' + fileId;
+      
+      // Route to the Google Form
+      // window.location = 'https://docs.google.com/forms/d/e/1FAIpQLSdYORiYpB8UxM_MSp_73sJ67EhHHGwdtN89OfTaLMFakiwFjQ/viewform?usp=pp_url&entry.1930774622=' + caseId + '&entry.446235083=' + fileId
     </script>
+    
+    <!-- <div class="container">
+      <p>Please wait while we redirect you to the Case Tracking Form.</p>
+      
+      <div class="text-center">
+        <a href="https://example.com/case-tracking-form" class="button">Go to Case Tracking Form</a>
+      </div>
+    </div> -->
   </body>
 </html>
