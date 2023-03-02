@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Page Title</title>
+    <title>RK Legal Advisors</title>
   </head>
   <body>
     <center>
@@ -11,8 +11,9 @@
     <script>
       var queryString = window.location.search;
       var params = new URLSearchParams(queryString);
-      var title = params.get('title'); // Assumes the parameter name is 'title'
-      document.title = title;
+      var caseId = params.get('caseID'); 
+      var fileId = params.get('fileID'); 
+      window.location = 'https://docs.google.com/forms/d/e/1FAIpQLSdYORiYpB8UxM_MSp_73sJ67EhHHGwdtN89OfTaLMFakiwFjQ/viewform?usp=pp_url&entry.1930774622=' + caseId + '&entry.446235083=' + fileId
     </script>
   </body>
 </html>
