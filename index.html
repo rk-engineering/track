@@ -4,8 +4,9 @@
 -->
 <html>
   <head>
-    <title>Redirecting to Case Tracking Form - RK Legals Advisors</title>
+    <title>RK Legals Advisors - Case File Tracker</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
     <style>
       body {
         background-color: rgb(16, 22, 40);
@@ -72,7 +73,8 @@
       <h2 id="case">Case: ...</h2>
       <h2 id="file">File - ...</h2>
       <br />
-      <h2>Redirecting to Case Tracking Form..</h2>
+      <h2 id="loadingMessage">Pre-Filling Audit Form...</h2>
+      <iframe id="formFrame" onload="frameLoaded()" src="" width="100%"  height="1000" frameborder="0" marginheight="0" marginwidth="0" >Loading…</iframe>
     </header>
 
     <script>
@@ -86,11 +88,18 @@
       // Display Case and File ID on the UI
       const caseIDElement = document.getElementById('case');
       const fileIDElement = document.getElementById('file');
+      const formFrame = document.getElementById('formFrame');
       caseIDElement.innerText = 'Case: ' + caseId;
       fileIDElement.innerText = 'File - ' + fileId;
+      formFrame.src = 'https://docs.google.com/forms/d/e/1FAIpQLSdYORiYpB8UxM_MSp_73sJ67EhHHGwdtN89OfTaLMFakiwFjQ/viewform?usp=pp_url&embedded=true&entry.1930774622=' + caseId + '&entry.446235083=' + fileId;
       
       // Route to the Google Form
-      window.location = 'https://docs.google.com/forms/d/e/1FAIpQLSdYORiYpB8UxM_MSp_73sJ67EhHHGwdtN89OfTaLMFakiwFjQ/viewform?usp=pp_url&entry.1930774622=' + caseId + '&entry.446235083=' + fileId
+      // window.location = 'https://docs.google.com/forms/d/e/1FAIpQLSdYORiYpB8UxM_MSp_73sJ67EhHHGwdtN89OfTaLMFakiwFjQ/viewform?usp=pp_url&entry.1930774622=' + caseId + '&entry.446235083=' + fileId
+
+      function frameLoaded() {
+        const loadingMessage = document.getElementById('loadingMessage');
+        loadingMessage.remove();
+      }
     </script>
     
     <!-- <div class="container">
